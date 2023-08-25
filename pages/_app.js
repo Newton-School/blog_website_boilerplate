@@ -1,5 +1,20 @@
-import '@/styles/globals.css'
+import '../styles/globals.css';
+import { Inter } from 'next/font/google';
+import Link from 'next/link';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const inter = Inter({ subsets: ['latin'] });
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <nav>
+        <Link href='/'>Home</Link>
+        <Link href='/about'>About</Link>
+        <Link href='/posts'>Posts</Link>
+      </nav>
+      <Component {...pageProps} />
+    </>
+  );
 }
+
+export default MyApp;
